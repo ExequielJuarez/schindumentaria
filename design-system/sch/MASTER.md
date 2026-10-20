@@ -26,7 +26,7 @@ no es una copia, cambia la tipografía, el tríptico de portada, el carril de lo
 
 ## Reglas
 
-- Fotos de producto en blanco y negro; al pasar el mouse (o tocar) recuperan el color.
+- Las fotos van a color, sin filtros: el blanco y negro es solo la interfaz (en portada, categorías y local se oscurecen apenas para que el texto se lea).
 - Los títulos resaltan con **contorno** (`<em>`), no con color.
 - Logo SCH: `partials/logo.ejs` (SVG). `animado` lo traza al cargar (portada, pantalla de entrada); `vivo` lo redibuja letra por letra al pasar el mouse. El pie lo muestra gigante.
 - Pantalla de entrada una vez por visita; el tríptico de portada se abre en cortina.
