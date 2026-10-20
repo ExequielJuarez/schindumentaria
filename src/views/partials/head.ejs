@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= titulo %> | SCH Indumentaria</title>
+  <meta name="description" content="<%= locals.descripcion || 'SCH Indumentaria: remeras, bermudas, camisas y pantalones streetwear. Local en La Plata 189, Santiago del Estero. Envíos a todo el país.' %>">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:title" content="<%= titulo %> | SCH Indumentaria">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/img/marca/sch-og.jpg">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Epilogue:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <%# La pantalla de entrada se ve una sola vez por visita (sin parpadeo) %>
+  <script>try { if (sessionStorage.getItem('sch-intro') || !/^\/($|\?)/.test(location.pathname + location.search)) document.documentElement.classList.add('sin-intro'); } catch (e) { document.documentElement.classList.add('sin-intro'); }</script>
+  <style>.sin-intro .intro { display: none; }</style>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <%# estilo puede ser un nombre o una lista: "login" o ["cuenta", "mis-datos"] %>
+  <% [].concat(locals.estilo || []).forEach(hoja => { %>
+    <link rel="stylesheet" href="/css/<%= hoja %>.css">
+  <% }) %>
+</head>
+<body>

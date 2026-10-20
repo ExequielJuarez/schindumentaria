@@ -1,0 +1,36 @@
+.pf { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.8fr); gap: 20px; align-items: start; }
+.pf__col { display: grid; gap: 20px; }
+.pf__lateral { position: sticky; top: 80px; }
+.pf__grupo { display: grid; gap: 10px; }
+.talles-filtro { display: flex; flex-wrap: wrap; gap: 8px; }
+.talle input { position: absolute; opacity: 0; pointer-events: none; }
+.talle span { display: grid; place-items: center; min-width: 48px; height: 42px; padding: 0 10px; border: 2px solid var(--linea-fuerte); font-weight: 800; font-size: 13px; cursor: pointer; transition: all 0.15s; }
+.talle:hover span { border-color: var(--papel); }
+.talle input:checked + span { background: var(--volt); color: var(--tinta); border-color: var(--volt); }
+.talle input:focus-visible + span { outline: 2px solid var(--volt); outline-offset: 2px; }
+.pf__colores { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.color-op { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 4px 0; }
+.color-op input { position: absolute; opacity: 0; pointer-events: none; }
+.color-op__punto { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--linea-fuerte); transition: box-shadow 0.15s; }
+.color-op input:checked + .color-op__punto { box-shadow: 0 0 0 2px var(--tinta-2), 0 0 0 4px var(--volt); }
+.color-op input:focus-visible + .color-op__punto { outline: 2px solid var(--volt); outline-offset: 4px; }
+.color-op__nombre { font-weight: 600; font-size: 14px; }
+.pf__nuevo-color { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; padding-top: 14px; border-top: 1px solid var(--linea); }
+.pf__nuevo-color input[type="text"] { flex: 1; min-width: 180px; min-height: 40px; padding: 0 12px; background: var(--tinta); border: 2px solid var(--linea); outline: 0; }
+.pf__nuevo-color input[type="text"]:focus { border-color: var(--volt); }
+.pf__nuevo-color input[type="color"] { width: 44px; height: 40px; padding: 0; border: 2px solid var(--linea); background: transparent; cursor: pointer; }
+.fotos-editor { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.foto-item { position: relative; display: grid; background: var(--tinta-3); border: 2px solid var(--linea); }
+.foto-item img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.foto-item.quitada img { opacity: 0.25; filter: grayscale(1); }
+.foto-item__principal, .foto-item__quitar { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-top: 1px solid var(--linea); background: var(--tinta-2); }
+.foto-item__quitar { color: var(--rojo); width: 100%; }
+.foto-item__principal input { accent-color: var(--volt); }
+.foto-item:has(input[name="principal"]:checked) { border-color: var(--volt); }
+.foto-item__nueva { position: absolute; left: 6px; top: 6px; }
+.subir { display: grid; place-items: center; gap: 2px; padding: 22px; border: 2px dashed var(--linea-fuerte); cursor: pointer; text-align: center; transition: all 0.15s; }
+.subir:hover, .subir.sobre { border-color: var(--volt); background: var(--tinta-3); }
+.subir input { position: absolute; opacity: 0; width: 0; height: 0; }
+.subir small { color: var(--apagado); }
+.pf__acciones { display: grid; gap: 10px; }
+@media (max-width: 1000px) { .pf { grid-template-columns: 1fr; } .pf__lateral { position: static; } }
