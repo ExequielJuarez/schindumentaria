@@ -2,4 +2,4 @@
 .fav-grilla { margin-top: 40px; }
 .tarjeta.sale { opacity: 0; transform: scale(0.94); transition: opacity 0.3s, transform 0.3s; }
 .carrito-vacio { display: grid; justify-items: start; gap: 14px; margin-block: 40px 60px; }
-.vacio__titulo { font-size: clamp(48px, 9vw, 120px); }
+.vacio__titulo { font-size: clamp(34px, 6.4vw, 96px); }

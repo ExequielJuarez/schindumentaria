@@ -11,8 +11,8 @@
 .checkout__grilla { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.8fr); gap: clamp(24px, 4vw, 60px); align-items: start; margin-top: 28px; }
 .checkout__form { display: grid; gap: 28px; }
 .bloque-form { border: 0; margin: 0; padding: 0; display: grid; gap: 18px; }
-.bloque-form legend { padding: 0; margin-bottom: 18px; float: left; width: 100%; display: flex; align-items: center; gap: 12px; font-family: var(--ff-titulo); font-size: 28px; text-transform: uppercase; }
-.bloque-form legend span { display: grid; place-items: center; width: 34px; height: 34px; background: var(--volt); color: var(--tinta); font-size: 18px; }
+.bloque-form legend { padding: 0; margin-bottom: 18px; float: left; width: 100%; display: flex; align-items: center; gap: 12px; font-family: var(--ff-titulo); font-stretch: 125%; font-weight: 800; letter-spacing: -0.02em; font-size: 20px; text-transform: uppercase; }
+.bloque-form legend span { display: grid; place-items: center; width: 32px; height: 32px; background: var(--papel); color: var(--tinta); font-size: 15px; }
 .bloque-form > :not(legend) { clear: both; }
 .opciones-entrega { display: grid; gap: 10px; }
 .checkout__acciones { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
@@ -22,7 +22,7 @@
 .revision small { display: block; color: var(--apagado); }
 
 .resumen-lateral { position: sticky; top: calc(var(--alto-header) + 18px); padding: 24px; background: var(--tinta-2); border: 2px solid var(--papel); box-shadow: 8px 8px 0 var(--volt); display: grid; gap: 20px; }
-.resumen__titulo { font-size: 36px; }
+.resumen__titulo { font-size: 24px; }
 .mini-items { display: grid; gap: 14px; }
 .mini-items li { display: grid; grid-template-columns: 62px 1fr auto; gap: 14px; align-items: center; }
 .mini-items__foto { position: relative; display: block; aspect-ratio: 4 / 5; background: var(--tinta-3); border: 1px solid var(--linea); }

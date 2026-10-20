@@ -27,7 +27,7 @@ completes el `.env` (ver `ACCESO.md`, `PAGOS.md`, `DEPLOY.md`).
 - Contenido editable del inicio rehecho (`src/data/inicioEditable.js`).
 - Panel: el formulario de producto edita talles, colores nuevos, resumen, descripción y fotos con vista previa.
 
-## Diseño
+## Diseño (rama `v2`: blanco y negro)
 
 Ver [`design-system/sch/MASTER.md`](design-system/sch/MASTER.md).
 

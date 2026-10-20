@@ -8,4 +8,4 @@
 .filtro-chip:hover { border-color: var(--papel); }
 .filtro-chip.activo { background: var(--volt); border-color: var(--volt); color: var(--tinta); }
 .carrito-vacio { display: grid; justify-items: start; gap: 14px; margin-block: 30px 60px; }
-.vacio__titulo { font-size: clamp(48px, 9vw, 120px); }
+.vacio__titulo { font-size: clamp(34px, 6.4vw, 96px); }

@@ -83,17 +83,17 @@
   const abrirBusqueda = () => {
     busqueda.classList.add("abierto");
     busqueda.setAttribute("aria-hidden", "false");
-    btnBuscar.setAttribute("aria-expanded", "true");
+    btnBuscar?.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
     setTimeout(() => input.focus(), 120);
   };
   const cerrarBusqueda = () => {
     busqueda.classList.remove("abierto");
     busqueda.setAttribute("aria-hidden", "true");
-    btnBuscar.setAttribute("aria-expanded", "false");
+    btnBuscar?.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   };
-  btnBuscar?.addEventListener("click", abrirBusqueda);
+  $$("[data-abrir-busqueda]").forEach((b) => b.addEventListener("click", abrirBusqueda));
   $("#btnCerrarBusqueda")?.addEventListener("click", cerrarBusqueda);
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") { cerrarBusqueda(); cerrarMenu(); }

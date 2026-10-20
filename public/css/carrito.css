@@ -1,7 +1,7 @@
 .pagina__titulo sup { font-family: var(--ff-texto); font-size: clamp(14px, 1.6vw, 22px); font-weight: 800; vertical-align: top; position: relative; top: 0.6em; margin-left: 0.4em; padding: 4px 10px; background: var(--volt); color: var(--tinta); }
 .carrito { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.9fr); gap: clamp(24px, 4vw, 56px); align-items: start; margin-top: 34px; }
 .carrito-vacio { display: grid; justify-items: start; gap: 14px; margin-block: 30px 60px; }
-.vacio__titulo { font-size: clamp(48px, 9vw, 120px); }
+.vacio__titulo { font-size: clamp(34px, 6.4vw, 96px); }
 
 .envio-barra { padding: 16px 18px; border: 2px solid var(--linea); margin-bottom: 8px; display: grid; gap: 10px; font-size: 14px; }
 .envio-barra__riel { height: 8px; background: var(--tinta-4); overflow: hidden; }

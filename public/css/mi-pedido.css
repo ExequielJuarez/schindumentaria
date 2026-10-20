@@ -9,7 +9,7 @@
 .linea-tiempo .hecho { color: var(--papel); }
 .linea-tiempo .hecho .linea-tiempo__punto { background: var(--papel); border-color: var(--papel); }
 .linea-tiempo .actual { background: var(--tinta-2); color: var(--volt); }
-.linea-tiempo .actual .linea-tiempo__punto { background: var(--volt); border-color: var(--volt); box-shadow: 0 0 0 5px rgba(217, 255, 63, 0.2); }
+.linea-tiempo .actual .linea-tiempo__punto { background: var(--volt); border-color: var(--volt); box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.2); }
 .detalle-grilla { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr); gap: clamp(20px, 3vw, 40px); align-items: start; }
 .detalle-col { display: grid; gap: 20px; }
 .caja { padding: 22px; border: 2px solid var(--linea); display: grid; gap: 14px; }

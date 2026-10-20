@@ -1,20 +1,11 @@
-// Inicio: el collage de la portada se mueve levemente con el mouse.
+// Inicio: el carril del lookbook se arrastra con el mouse (en el celular se desliza con el dedo).
 (() => {
-  const collage = document.querySelector("[data-parallax]");
-  if (!collage || matchMedia("(prefers-reduced-motion: reduce)").matches || !matchMedia("(hover: hover)").matches) return;
-  const capas = [...collage.querySelectorAll("[data-capa]")];
-  const base = capas.map((c) => getComputedStyle(c).transform);
-  let cuadro;
-  document.addEventListener("mousemove", (e) => {
-    cancelAnimationFrame(cuadro);
-    cuadro = requestAnimationFrame(() => {
-      const x = (e.clientX / innerWidth - 0.5) * 2;
-      const y = (e.clientY / innerHeight - 0.5) * 2;
-      capas.forEach((c, i) => {
-        const f = (i + 1) * 7;
-        const previo = base[i] === "none" ? "" : base[i];
-        c.style.transform = `${previo} translate(${(x * f).toFixed(1)}px, ${(y * f).toFixed(1)}px)`;
-      });
-    });
-  });
+  // Lookbook: arrastrar con el mouse
+  const carril = document.querySelector(".carril");
+  if (carril && matchMedia("(hover: hover)").matches) {
+    let abajo = false, x = 0, s = 0;
+    carril.addEventListener("mousedown", (e) => { abajo = true; x = e.pageX; s = carril.scrollLeft; carril.style.scrollSnapType = "none"; carril.style.cursor = "grabbing"; });
+    window.addEventListener("mouseup", () => { abajo = false; carril.style.scrollSnapType = ""; carril.style.cursor = ""; });
+    carril.addEventListener("mousemove", (e) => { if (!abajo) return; e.preventDefault(); carril.scrollLeft = s - (e.pageX - x); });
+  }
 })();

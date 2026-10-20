@@ -1,39 +1,32 @@
-# SCH Indumentaria — sistema de diseño
+# SCH Indumentaria — sistema de diseño (v2, blanco y negro)
 
-Fuente de verdad visual de la tienda. Los tokens viven en `public/css/base.css` (`:root`).
+Tokens en `public/css/base.css` (`:root`). Referencia de composición: tiendas de ropa a sangre, fotos grandes y mucho negro;
+no es una copia, cambia la tipografía, el tríptico de portada, el carril de lookbook y el bloque invertido del local.
 
-Generado con la skill **ui-ux-pro-max** (`--domain style` y `--domain typography` para streetwear) y ajustado a mano
-a la marca: el generador automático devolvió una paleta verde y una tipografía de lujo que no encajan con el negocio, así
-que se tomó de la skill solo lo verificado:
+## Decisiones tomadas con la skill `ui-ux-pro-max`
 
-| Decisión | Origen en la skill |
+| Consulta a la skill | Resultado aplicado |
 |---|---|
-| Estilo: **Dark Mode (OLED) + Brutalismo** → negro puro, bordes visibles de 2 px, esquinas casi rectas, sombras sólidas en hover | `styles.csv` → *Dark Mode (OLED)*, *Brutalism* |
-| Tipografía: **Anton** (títulos, condensada y gritona) + **Epilogue** (texto) | `typography.csv` → *Gen Z Brutal* |
-| Movimiento 150–300 ms, `prefers-reduced-motion` respetado, foco visible, contraste ≥ 4.5:1 | Checklist de la skill |
+| Estilo `Minimalism & Swiss Style` + `Brutalism` | Grilla, `#000`/`#FFF`, líneas de 1 px, esquinas rectas, **sin sombras ni degradés decorativos**, hover de 200–250 ms |
+| Tipografía `Kinetic Motion` (Syncopate + Space Mono) | **Syncopate** (ancha) en botones y menú, **Space Mono** en etiquetas; los títulos usan **Archivo expandida** (wdth 125) para que acompañe al logo |
+| Patrón `Hero-Centric` | Portada a sangre con un único CTA principal; sin autoplay (no hay carrusel) |
+| UX: contraste, táctil, formularios | Botones/íconos de 44 px, separación ≥ 8 px, inputs de 16 px en celular, `inputmode`, foco visible, `prefers-reduced-motion` |
 
 ## Color
 
 | Token | Valor | Uso |
 |---|---|---|
-| `--tinta` | `#0a0a0b` | Fondo (negro del logo) |
-| `--tinta-2/3/4` | `#111113` `#19191c` `#232327` | Superficies |
-| `--linea` / `--linea-fuerte` | `#2d2d33` / `#4a4a52` | Bordes |
-| `--papel` | `#f3f1ec` | Texto y botón base (blanco del logo) |
-| `--apagado` | `#9d9ba3` | Texto secundario |
-| `--volt` | `#d9ff3f` | **Único acento**: acciones, precios destacados, estados activos |
-| `--rojo` `--verde` `--ambar` | `#ff5a4f` `#46e08a` `#ffc247` | Solo estados (error, ok, alerta) |
+| `--tinta` | `#000` | Fondo |
+| `--papel` | `#fff` | Texto, botón principal, bloque invertido |
+| `--apagado` | `#8c8c8c` | Texto secundario (≥ 4.5:1 sobre negro) |
+| `--linea` / `--linea-fuerte` | `#242424` / `#4d4d4d` | Bordes |
+| `--acento` | `#3d5bff` | **Único color**: relleno de botones al tocar (texto blanco: 5.1:1) |
+| `--acento-texto` | `#8ea1ff` | Acento como texto sobre negro (7.4:1) |
+| `--rojo` `--verde` `--ambar` | — | Solo estados |
 
 ## Reglas
 
-- Un solo acento. Si todo es volt, nada lo es.
-- Títulos siempre en Anton, mayúsculas; el texto resaltado va en `<em>` (se ve volt, sin cursiva).
-- Interactivo = se levanta (`translate(-3px,-3px)` + sombra sólida del color contrario).
-- Fotos de producto en proporción 4:5, sin recorte de cabeza ni etiquetas de Instagram.
-- Logo: `partials/logo.ejs` (SVG propio). `animado` lo traza al aparecer, `vivo` hace glitch al pasar el mouse.
-- Pantalla de entrada una vez por visita (`sessionStorage`), desactivada con `prefers-reduced-motion`.
-
-## Componentes (en `base.css`)
-
-`.btn` (+ `--volt` `--linea` `--peligro`) · `.campo` · `.opcion` · `.tilde` · `.chip` · `.estado` · `.tarjeta` ·
-`.grilla-productos` · `.tabla` · `.aviso` · `.toast`. El panel (`admin.css`) reutiliza los mismos componentes.
+- Fotos de producto en blanco y negro; al pasar el mouse (o tocar) recuperan el color.
+- Los títulos resaltan con **contorno** (`<em>`), no con color.
+- Logo SCH: `partials/logo.ejs` (SVG). `animado` lo traza al cargar (portada, pantalla de entrada); `vivo` lo redibuja letra por letra al pasar el mouse. El pie lo muestra gigante.
+- Pantalla de entrada una vez por visita; el tríptico de portada se abre en cortina.

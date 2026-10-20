@@ -1,6 +1,6 @@
 .cabecera-seccion { padding-bottom: 14px; border-bottom: 1px solid var(--linea); }
-.cabecera-seccion__titulo { font-size: clamp(64px, 13vw, 200px); line-height: 0.86; margin-block: 6px 10px; }
-.cabecera-seccion__titulo sup { font-family: var(--ff-texto); font-size: clamp(14px, 1.6vw, 22px); font-weight: 800; letter-spacing: 0.04em; vertical-align: top; position: relative; top: 0.6em; margin-left: 0.5em; padding: 4px 10px; background: var(--volt); color: var(--tinta); }
+.cabecera-seccion__titulo { font-size: clamp(40px, 10.4vw, 160px); line-height: 0.9; margin-block: 6px 10px; }
+.cabecera-seccion__titulo sup { font-family: var(--ff-texto); font-size: clamp(14px, 1.6vw, 22px); font-weight: 800; letter-spacing: 0.04em; vertical-align: top; position: relative; top: 0.6em; margin-left: 0.5em; padding: 4px 10px; background: var(--papel); color: var(--tinta); }
 
 .catalogo { padding-block: 22px 40px; }
 .barra-filtros { position: sticky; top: var(--alto-header); z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 14px; margin-bottom: 26px; background: rgba(10, 10, 11, 0.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--linea); }
