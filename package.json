@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
+    "celular": "node src/helpers/mostrar-red.js",
     "db:instalar": "node database/instalar.js"
   },
   "keywords": [],

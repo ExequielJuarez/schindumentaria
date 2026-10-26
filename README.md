@@ -15,6 +15,27 @@ npm run db:instalar           # crea la base "tienda_sch" con datos de prueba
 npm run dev                   # http://localhost:3000
 ```
 
+### Verla desde el celular (misma red Wi-Fi)
+
+La app ya escucha en toda la red (`HOST=0.0.0.0`), así que no hay que configurar nada más:
+
+1. Encendé la tienda en la compu: `npm run dev`. Al arrancar muestra algo así:
+   ```
+   💻 En esta compu:  http://localhost:3000
+   📱 Desde el celular (mismo Wi-Fi): http://192.168.0.15:3000
+   ```
+   (`npm run celular` vuelve a mostrar esa dirección sin encender nada.)
+2. Conectá el celular **al mismo Wi-Fi** (no a datos móviles) y abrí esa dirección en el navegador.
+
+Si no abre:
+- **Windows**: la primera vez aparece un aviso del firewall para `node.exe`; marcá **Redes privadas** y permití. Si ya lo cerraste, activalo en *Firewall de Windows → Permitir una aplicación*.
+- **Router**: algunos Wi-Fi de invitados o de oficina tienen "aislamiento de clientes" y bloquean la conexión entre dispositivos. Usá la red principal.
+- **Linux**: `sudo ufw allow 3000/tcp`.
+- Para dejar la tienda **solo en esta compu**: poné `HOST=127.0.0.1` en el `.env`.
+
+Tené en cuenta que, mientras probás por IP, el pago real con Mercado Pago y "Continuar con Google" necesitan una dirección pública con https
+(ver `PAGOS.md` y `ACCESO.md`); los modos demo funcionan igual desde el celular.
+
 Usuarios de prueba: `demo@tienda.com / Demo1234` (cliente), `admin@tienda.com / Admin1234`, `super@tienda.com / Super1234`
 (superadmin: además edita la página de inicio). El resto (Mercado Pago, emails, Google) funciona en modo demo hasta que
 completes el `.env` (ver `ACCESO.md`, `PAGOS.md`, `DEPLOY.md`).

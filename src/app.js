@@ -15,6 +15,9 @@ const categoriaService = require("./services/categoriaService");
 
 // Render (y otros hostings) indican el puerto en PORT
 const puerto = Number(process.env.PORT) || 3000;
+// Por defecto escucha en todas las interfaces: así también se abre desde el celular
+// (misma red Wi-Fi) con la IP de la compu. HOST=127.0.0.1 la deja solo para esta compu.
+const host = process.env.HOST || "0.0.0.0";
 
 app.use(express.static(path.join(__dirname, "../public")));
 // Navegadores que piden /favicon.ico igual reciben el ícono
@@ -124,7 +127,10 @@ db.sequelize
   .then(() => require("./model/database/actualizar")())
   .then(() => {
     console.log(`✅ Conectado a la base de datos "${db.sequelize.config.database}"`);
-    app.listen(puerto, () => console.log(`🚀 Servidor Express corriendo en el puerto ${puerto}`));
+    app.listen(puerto, host, () => {
+      console.log(`🚀 Servidor Express corriendo en el puerto ${puerto}`);
+      require("./helpers/red").avisoDeArranque(puerto, host).forEach((linea) => console.log(linea));
+    });
     // Pagos: modo y vencimiento de los pedidos con tarjeta que no se pagaron
     const pagos = require("./services/pagoService");
     console.log(
