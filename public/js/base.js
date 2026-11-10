@@ -37,7 +37,7 @@
     el.hidden = !n;
     el.animate([{ transform: "scale(1.6)" }, { transform: "scale(1)" }], { duration: 300, easing: "ease-out" });
   }
-  window.SCH = { $, $$, peso, toast, pedir, contadorCarrito };
+  window.VELT = { $, $$, peso, toast, pedir, contadorCarrito };
 
   // ── Flash (mensaje de un solo uso del servidor) ──────────
   const flash = $("#flash");
@@ -46,7 +46,7 @@
   // ── Pantalla de entrada: una vez por visita ──────────────
   const intro = $("#intro");
   if (intro && !document.documentElement.classList.contains("sin-intro")) {
-    try { sessionStorage.setItem("sch-intro", "1"); } catch {}
+    try { sessionStorage.setItem("velt-intro", "1"); } catch {}
     document.body.style.overflow = "hidden";
     setTimeout(() => intro.classList.add("salir"), 1700);
     setTimeout(() => { intro.remove(); document.body.style.overflow = ""; }, 2600);
@@ -134,7 +134,7 @@
     const c = $("#contadorFavoritos");
     if (c) { c.textContent = r.cantidad; c.hidden = !r.cantidad; }
     toast(r.activo ? "Guardado en favoritos" : "Quitado de favoritos");
-    document.dispatchEvent(new CustomEvent("sch:favorito", { detail: { id: btn.dataset.fav, ...r } }));
+    document.dispatchEvent(new CustomEvent("velt:favorito", { detail: { id: btn.dataset.fav, ...r } }));
   });
 
   // ── Mostrar / ocultar contraseña ─────────────────────────
@@ -151,8 +151,8 @@
   // ── Cookies ──────────────────────────────────────────────
   const cookies = $("#avisoCookies");
   try {
-    if (cookies && !localStorage.getItem("sch-cookies")) cookies.hidden = false;
-    $("#aceptarCookies")?.addEventListener("click", () => { localStorage.setItem("sch-cookies", "1"); cookies.hidden = true; });
+    if (cookies && !localStorage.getItem("velt-cookies")) cookies.hidden = false;
+    $("#aceptarCookies")?.addEventListener("click", () => { localStorage.setItem("velt-cookies", "1"); cookies.hidden = true; });
   } catch {}
 
   // ── Aparición al hacer scroll ────────────────────────────
@@ -162,6 +162,6 @@
     const o = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { x.target.classList.add("visto"); o.unobserve(x.target); } }), { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
     nodos.forEach((n) => o.observe(n));
   };
-  window.SCH.aparecer = aparecer;
+  window.VELT.aparecer = aparecer;
   aparecer();
 })();

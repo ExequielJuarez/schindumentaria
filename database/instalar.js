@@ -11,16 +11,16 @@ const fs = require("fs");
 const path = require("path");
 const mysql = require("mysql2/promise");
 
-const DB = process.env.DB_NAME || "tienda_sch";
+const DB = process.env.DB_NAME || "tienda_velt";
 const soloEstructura = process.argv.includes("--vacia");
 
-// Los .sql usan "tienda_sch"; si el .env pide otro nombre, se reemplaza
+// Los .sql usan "tienda_velt"; si el .env pide otro nombre, se reemplaza
 // y la zona horaria sigue a DB_TIMEZONE
 const ZONA = process.env.DB_TIMEZONE || "-03:00";
 const leer = (archivo) =>
   fs
     .readFileSync(path.join(__dirname, archivo), "utf8")
-    .replace(/\btienda_sch\b/g, `\`${DB}\``)
+    .replace(/\btienda_velt\b/g, `\`${DB}\``)
     .replace(/SET time_zone = '[^']*'/g, `SET time_zone = '${ZONA}'`);
 
 (async () => {

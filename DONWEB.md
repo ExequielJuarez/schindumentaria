@@ -56,7 +56,7 @@ free -h          # en "Swap" tiene que decir 2.0Gi
 La contraseña de `tienda` se inventó en este paso y es la que va en `DB_PASSWORD` del `.env`.
 ```bash
 systemctl enable --now mariadb
-mysql -e "CREATE DATABASE tienda_sch CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; CREATE USER 'tienda'@'localhost' IDENTIFIED BY 'LA_CLAVE_DE_LA_BASE'; GRANT ALL PRIVILEGES ON tienda_sch.* TO 'tienda'@'localhost'; FLUSH PRIVILEGES;"
+mysql -e "CREATE DATABASE tienda_velt CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; CREATE USER 'tienda'@'localhost' IDENTIFIED BY 'LA_CLAVE_DE_LA_BASE'; GRANT ALL PRIVILEGES ON tienda_velt.* TO 'tienda'@'localhost'; FLUSH PRIVILEGES;"
 mysql -e "SHOW DATABASES;"
 ```
 
@@ -83,13 +83,13 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USER=tienda
 DB_PASSWORD=LA_CLAVE_DE_LA_BASE
-DB_NAME=tienda_sch
+DB_NAME=tienda_velt
 DB_TIMEZONE=-03:00
 DB_POOL_MAX=5
 
 MP_ACCESS_TOKEN=
 MP_WEBHOOK_SECRET=
-MP_NOMBRE_TIENDA=SCH Indumentaria
+MP_NOMBRE_TIENDA=VELT Indumentaria
 MP_MAX_CUOTAS=6
 PAGO_VENCE_HORAS=48
 
@@ -193,7 +193,7 @@ Listo: **http://201.32.130.87**.
 2. Corré esto, cambiando los emails:
 
 ```bash
-mysql tienda_sch -e "
+mysql tienda_velt -e "
 DELETE FROM notificaciones; DELETE FROM pedido_items; DELETE FROM pedidos; DELETE FROM favoritos;
 ALTER TABLE pedidos AUTO_INCREMENT = 1001;
 UPDATE usuarios SET rol='superadmin' WHERE email='TU-EMAIL@gmail.com';
@@ -214,7 +214,7 @@ Los productos quedan como están.
 | Ver los últimos mensajes o errores | `pm2 logs tienda --lines 50 --nostream` |
 | Reiniciar la tienda | `pm2 restart tienda` |
 | Reiniciar después de editar el `.env` | `pm2 restart tienda --update-env` |
-| Entrar a la base por consola | `mysql tienda_sch` (salís con `exit`) |
+| Entrar a la base por consola | `mysql tienda_velt` (salís con `exit`) |
 | Ver la memoria | `free -h` |
 
 ### Actualizar la tienda cuando hay cambios nuevos en GitHub
@@ -247,7 +247,7 @@ Nueva conexión con estos datos:
 
 ### Copia de seguridad de la base
 ```bash
-mysqldump tienda_sch > /root/backup-$(date +%F).sql
+mysqldump tienda_velt > /root/backup-$(date +%F).sql
 ```
 
 ---
@@ -261,20 +261,20 @@ Además, el https hace falta para dos cosas:
 - **Mercado Pago:** que vuelva solo a la tienda después de pagar y que avise los pagos (webhook).
 - **Login con Google:** Google lo exige en producción.
 
-Cuando tengas el dominio (ejemplo: `schindumentaria.com.ar`):
+Cuando tengas el dominio (ejemplo: `veltindumentaria.com.ar`):
 
 1. En la zona DNS, creá un registro **A** para `@` y otro para `www`, los dos apuntando a `201.32.130.87`.
 2. Cuando el dominio ya abra la tienda, corré en el servidor:
 
 ```bash
-sed -i 's/server_name _;/server_name schindumentaria.com.ar www.schindumentaria.com.ar;/' /etc/nginx/sites-available/tienda
+sed -i 's/server_name _;/server_name veltindumentaria.com.ar www.veltindumentaria.com.ar;/' /etc/nginx/sites-available/tienda
 nginx -t && systemctl reload nginx
 apt install -y certbot python3-certbot-nginx
-certbot --nginx -d schindumentaria.com.ar -d www.schindumentaria.com.ar
+certbot --nginx -d veltindumentaria.com.ar -d www.veltindumentaria.com.ar
 ```
 
-3. En el `.env`, poné `APP_URL=https://schindumentaria.com.ar` y
-   `GOOGLE_CALLBACK_URL=https://schindumentaria.com.ar/auth/google/callback`.
+3. En el `.env`, poné `APP_URL=https://veltindumentaria.com.ar` y
+   `GOOGLE_CALLBACK_URL=https://veltindumentaria.com.ar/auth/google/callback`.
 4. Aplicá los cambios con `pm2 restart tienda --update-env`.
 
 El certificado se renueva solo.

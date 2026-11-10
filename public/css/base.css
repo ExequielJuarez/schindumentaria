@@ -1,5 +1,5 @@
 /* ==========================================================
-   SCH INDUMENTARIA · v2 — blanco y negro, editorial
+   VELT INDUMENTARIA · v2 — blanco y negro, editorial
    Negro puro, blanco, líneas finas, tipografía ancha (Archivo
    expandida) y etiquetas en monoespaciada. Un solo color de
    apoyo (cobalto) que aparece solo al tocar un botón.
@@ -97,18 +97,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 .contador[hidden] { display: none; }
 
 /* ── Logo animado ──────────────────────────────────────── */
-.sch-logo { width: 100%; height: auto; overflow: visible; }
-.sch-logo g { fill: none; stroke: currentColor; stroke-width: 17; stroke-linejoin: miter; stroke-linecap: butt; }
-.sch-logo--anim path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: sch-trazo 0.9s var(--ease) forwards; }
-.sch-logo--anim path:nth-of-type(1) { animation-delay: 0.1s; }
-.sch-logo--anim path:nth-of-type(2) { animation-delay: 0.5s; }
-.sch-logo--anim path:nth-of-type(3) { animation-delay: 0.9s; }
-@keyframes sch-trazo { to { stroke-dashoffset: 0; } }
+.velt-logo { width: 100%; height: auto; overflow: visible; }
+.velt-logo g { fill: none; stroke: currentColor; stroke-width: 17; stroke-linejoin: miter; stroke-linecap: butt; }
+.velt-logo--anim path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: velt-trazo 0.75s var(--ease) forwards; }
+.velt-logo--anim path:nth-of-type(1) { animation-delay: 0.05s; }
+.velt-logo--anim path:nth-of-type(2) { animation-delay: 0.35s; }
+.velt-logo--anim path:nth-of-type(3) { animation-delay: 0.65s; }
+.velt-logo--anim path:nth-of-type(4) { animation-delay: 0.95s; }
+@keyframes velt-trazo { to { stroke-dashoffset: 0; } }
 /* Al pasar el mouse el logo se vuelve a dibujar, letra por letra */
-.sch-logo--vivo:hover path { animation: sch-redibuja 0.8s var(--ease) both; }
-.sch-logo--vivo:hover path:nth-of-type(2) { animation-delay: 0.12s; }
-.sch-logo--vivo:hover path:nth-of-type(3) { animation-delay: 0.24s; }
-@keyframes sch-redibuja { 0% { stroke-dasharray: 1; stroke-dashoffset: 0; } 1% { stroke-dashoffset: 1; } 100% { stroke-dasharray: 1; stroke-dashoffset: 0; } }
+.velt-logo--vivo:hover path { animation: velt-redibuja 0.8s var(--ease) both; }
+.velt-logo--vivo:hover path:nth-of-type(2) { animation-delay: 0.12s; }
+.velt-logo--vivo:hover path:nth-of-type(3) { animation-delay: 0.24s; }
+.velt-logo--vivo:hover path:nth-of-type(4) { animation-delay: 0.36s; }
+@keyframes velt-redibuja { 0% { stroke-dasharray: 1; stroke-dashoffset: 0; } 1% { stroke-dashoffset: 1; } 100% { stroke-dasharray: 1; stroke-dashoffset: 0; } }
 .marca-link { display: block; width: 104px; color: var(--papel); }
 
 .intro { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: var(--tinta); transition: clip-path 0.9s var(--ease) 0.15s; clip-path: inset(0 0 0 0); }
@@ -287,7 +289,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .beneficio p { color: var(--apagado); font-size: 13.5px; }
 .footer { margin-top: 90px; border-top: 1px solid var(--linea); overflow: hidden; }
 .footer__logo-gigante { display: block; width: 100%; padding: clamp(18px, 4vw, 56px) var(--gutter) 0; color: var(--papel); }
-.footer__logo-gigante .sch-logo g { stroke-width: 9; }
+.footer__logo-gigante .velt-logo g { stroke-width: 9; }
 .footer__grilla { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-block: 48px 36px; }
 .footer__grilla h4 { font-family: var(--ff-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--apagado); margin-bottom: 16px; }
 .footer__grilla li { margin-bottom: 9px; }
@@ -345,6 +347,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .rev { opacity: 1; transform: none; }
-  .sch-logo--anim path { stroke-dashoffset: 0; }
+  .velt-logo--anim path { stroke-dashoffset: 0; }
   .intro { display: none; }
 }

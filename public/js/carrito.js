@@ -1,6 +1,6 @@
 // Carrito: cambia cantidades, cupón, entrega y pago sin recargar la página.
 (() => {
-  const { $, $$, peso, toast, pedir, contadorCarrito } = window.SCH;
+  const { $, $$, peso, toast, pedir, contadorCarrito } = window.VELT;
   const raiz = $("[data-carrito]");
   if (!raiz || !$("#items")) return;
 

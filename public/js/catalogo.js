@@ -1,6 +1,6 @@
 // Catálogo: filtros (tipo, talle, color, precio, stock) y orden, todo en el navegador.
 (() => {
-  const { $, $$, peso } = window.SCH;
+  const { $, $$, peso } = window.VELT;
   const raiz = $("[data-catalogo]");
   if (!raiz) return;
 
@@ -51,7 +51,7 @@
     const c = $("#filtrosActivos");
     c.hidden = !activos;
     c.textContent = activos;
-    window.SCH.aparecer(grilla);
+    window.VELT.aparecer(grilla);
     // El tipo elegido queda en la dirección para poder compartirla
     const url = new URL(location.href);
     const campo = raiz.dataset.grupoCampo === "sub" ? "sub" : null;

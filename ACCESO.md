@@ -12,7 +12,7 @@ Las dos primeras opciones de abajo se configuran con variables en el `.env` en t
 
 ## 1. Emails con Gmail (códigos de 6 números)
 
-Vas a necesitar una cuenta de Gmail para la tienda, por ejemplo `schindumentaria.tienda@gmail.com`.
+Vas a necesitar una cuenta de Gmail para la tienda, por ejemplo `veltindumentaria.tienda@gmail.com`.
 
 1. Entrá a esa cuenta y activá la **verificación en 2 pasos**: https://myaccount.google.com/security
 2. Entrá a https://myaccount.google.com/apppasswords
@@ -22,9 +22,9 @@ Vas a necesitar una cuenta de Gmail para la tienda, por ejemplo `schindumentaria
 ```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
-SMTP_USER=schindumentaria.tienda@gmail.com
+SMTP_USER=veltindumentaria.tienda@gmail.com
 SMTP_PASS=abcdefghijklmnop        # las 16 letras, sin espacios
-MAIL_FROM=SCH Indumentaria <schindumentaria.tienda@gmail.com>
+MAIL_FROM=VELT Indumentaria <veltindumentaria.tienda@gmail.com>
 ```
 
 5. Reiniciá la app. En la consola vas a ver `✉️ Emails: enviando con SMTP`.
@@ -41,10 +41,10 @@ MAIL_FROM=SCH Indumentaria <schindumentaria.tienda@gmail.com>
 
 ## 2. Continuar con Google
 
-1. Entrá a https://console.cloud.google.com y creá un proyecto, por ejemplo "SCH Indumentaria".
+1. Entrá a https://console.cloud.google.com y creá un proyecto, por ejemplo "VELT Indumentaria".
 2. Andá a **APIs y servicios → Pantalla de consentimiento de OAuth**:
    - Tipo de usuario: **Externo**.
-   - Nombre de la app: *SCH Indumentaria*.
+   - Nombre de la app: *VELT Indumentaria*.
    - Email de asistencia: el tuyo.
    - Permisos: `email`, `profile` y `openid`. No hace falta agregar nada raro.
    - Al final tocá **Publicar app**. Si no lo hacés, solo pueden entrar los "usuarios de prueba" que agregues.

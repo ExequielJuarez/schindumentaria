@@ -1,4 +1,4 @@
-# SCH Indumentaria — sistema de diseño (v2, blanco y negro)
+# VELT Indumentaria — sistema de diseño (v2, blanco y negro)
 
 Tokens en `public/css/base.css` (`:root`). Referencia de composición: tiendas de ropa a sangre, fotos grandes y mucho negro;
 no es una copia, cambia la tipografía, el tríptico de portada, el carril de lookbook y el bloque invertido del local.
@@ -28,5 +28,5 @@ no es una copia, cambia la tipografía, el tríptico de portada, el carril de lo
 
 - Las fotos van a color, sin filtros: el blanco y negro es solo la interfaz (en portada, categorías y local se oscurecen apenas para que el texto se lea).
 - Los títulos resaltan con **contorno** (`<em>`), no con color.
-- Logo SCH: `partials/logo.ejs` (SVG). `animado` lo traza al cargar (portada, pantalla de entrada); `vivo` lo redibuja letra por letra al pasar el mouse. El pie lo muestra gigante.
+- Logo VELT: `partials/logo.ejs` (SVG). `animado` lo traza al cargar (portada, pantalla de entrada); `vivo` lo redibuja letra por letra al pasar el mouse. El pie lo muestra gigante.
 - Pantalla de entrada una vez por visita; el tríptico de portada se abre en cortina.

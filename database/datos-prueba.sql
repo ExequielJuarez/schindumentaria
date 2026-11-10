@@ -1,5 +1,5 @@
 -- ==========================================================
--- SCH INDUMENTARIA — Datos de prueba
+-- VELT INDUMENTARIA — Datos de prueba
 --
 -- Cargar DESPUÉS de schema.sql (borra y vuelve a cargar todo).
 -- Las fechas de los pedidos son relativas al momento de la carga,
@@ -16,7 +16,7 @@
 -- Uso:  npm run db:instalar   (carga schema.sql + este archivo)
 -- ==========================================================
 
-USE tienda_sch;
+USE tienda_velt;
 SET NAMES utf8mb4;
 SET time_zone = '-03:00';
 
@@ -41,7 +41,7 @@ ALTER TABLE pedidos AUTO_INCREMENT = 1001;
 -- ── Usuarios ─────────────────────────────────────────────
 INSERT INTO usuarios (id, nombre, apellido, email, telefono, password, google_id, rol, newsletter) VALUES
   (1, 'Cliente', 'Demo', 'demo@tienda.com', '385 555 4444', '$2b$10$jX3V6AhKp.Par41X/kOWfelfguSzaU4z/IZkvYOv0UHGBQ/6Rl2Oy', NULL, 'cliente', 1),
-  (2, 'Admin', 'SCH', 'admin@tienda.com', NULL, '$2b$10$OUwf1N16MEgHBa5jhFt6K.cGjo4yUyiF/cOwUOBsyttSBQqgwMRYq', NULL, 'admin', 0),
+  (2, 'Admin', 'VELT', 'admin@tienda.com', NULL, '$2b$10$OUwf1N16MEgHBa5jhFt6K.cGjo4yUyiF/cOwUOBsyttSBQqgwMRYq', NULL, 'admin', 0),
   (3, 'Ana', 'Pérez', 'ana.perez@gmail.com', NULL, NULL, 'demo-ana.perez@gmail.com', 'cliente', 0),
   (4, 'Super', 'Admin', 'super@tienda.com', NULL, '$2b$10$AhElj/1kwG2mSrQCEpRKI.eaaUIicEpYgvqxK2sckmrfVXodWJpke', NULL, 'superadmin', 0);
 
@@ -193,7 +193,7 @@ INSERT INTO especificaciones (producto_id, clave, valor, orden) VALUES
 -- ── Cupones ─────────────────────────────────────────────
 INSERT INTO cupones (codigo, descripcion, porcentaje, activo, vence_en) VALUES
   ('BIENVENIDA', '10% off en tu primera compra', 0.1000, 1, NULL),
-  ('SCH5', '5% off de prueba', 0.0500, 1, NULL),
+  ('VELT5', '5% off de prueba', 0.0500, 1, NULL),
   ('VERANO20', '20% off de temporada (vencido)', 0.2000, 1, CURDATE() - INTERVAL 10 DAY);
 
 -- ── Favoritos del cliente demo ──────────────────────────

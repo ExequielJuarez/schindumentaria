@@ -1,6 +1,6 @@
 // Ficha de producto: galería, selección de color y talle, cantidad y "Agregar al carrito".
 (() => {
-  const { $, $$, toast, pedir, contadorCarrito } = window.SCH;
+  const { $, $$, toast, pedir, contadorCarrito } = window.VELT;
   const raiz = $("[data-producto]");
   if (!raiz) return;
 

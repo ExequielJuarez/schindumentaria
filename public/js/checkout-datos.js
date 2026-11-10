@@ -1,6 +1,6 @@
 // Datos del checkout: muestra/oculta domicilio y factura A, y marca errores sin recargar.
 (() => {
-  const { $, $$ } = window.SCH;
+  const { $, $$ } = window.VELT;
   const form = $("#formDatos");
   if (!form) return;
 
@@ -31,7 +31,7 @@
       e.preventDefault();
       vacios.forEach((n) => form[n].closest(".campo").classList.add("campo--error"));
       form[vacios[0]].focus();
-      window.SCH.toast("Completá los campos marcados", "error");
+      window.VELT.toast("Completá los campos marcados", "error");
     }
   });
 })();

@@ -113,9 +113,9 @@ const SECCIONES = {
     descripcion: "Mosaico de fotos de la calle y del local.",
     campos: {
       etiqueta: etiquetaSeccion("En la calle"),
-      titulo: tituloSeccion("Así se ve *SCH*"),
-      redTexto: texto("Link a redes", "@schindumentaria.sgo", 30, { ancho: "medio" }),
-      redLink: link("A dónde lleva", "https://www.instagram.com/schindumentaria.sgo/"),
+      titulo: tituloSeccion("Así se ve *VELT*"),
+      redTexto: texto("Link a redes", "@veltindumentaria.sgo", 30, { ancho: "medio" }),
+      redLink: link("A dónde lleva", "https://www.instagram.com/veltindumentaria.sgo/"),
       fotos: {
         tipo: "lista",
         etiqueta: "Fotos",
@@ -128,9 +128,9 @@ const SECCIONES = {
         },
         defecto: [
           { imagen: "/img/productos/remera-valley-oversize-1.jpg", texto: "Valley" },
-          { imagen: "/img/inicio/local-sch-1.jpg", texto: "En el local" },
+          { imagen: "/img/inicio/local-velt-1.jpg", texto: "En el local" },
           { imagen: "/img/productos/camisa-bowling-negra-1.jpg", texto: "Bowling" },
-          { imagen: "/img/inicio/local-sch-2.jpg", texto: "Camiseta UTE" },
+          { imagen: "/img/inicio/local-velt-2.jpg", texto: "Camiseta UTE" },
         ],
       },
     },
@@ -170,7 +170,7 @@ const SECCIONES = {
       horarios: texto("Horarios", "Lunes a sábado · 9 a 13 y 18 a 22 hs", 60, { ancho: "medio" }),
       botonTexto: texto("Botón", "Cómo llegar", 30, { ancho: "medio" }),
       botonLink: link("Link del mapa", "https://maps.app.goo.gl/9vVBNpbeBPQEKGS27"),
-      imagen: imagen("Foto del local", "/img/inicio/local-sch-1.jpg", { ayuda: "Mejor una foto vertical." }),
+      imagen: imagen("Foto del local", "/img/inicio/local-velt-1.jpg", { ayuda: "Mejor una foto vertical." }),
     },
   },
 
@@ -188,7 +188,7 @@ const SECCIONES = {
         ayuda: "*Entre asteriscos* queda resaltado.",
       },
       botonTexto: texto("Botón", "Ir al Instagram", 30, { ancho: "medio" }),
-      botonLink: link("Link del botón", "https://www.instagram.com/schindumentaria.sgo/"),
+      botonLink: link("Link del botón", "https://www.instagram.com/veltindumentaria.sgo/"),
       secundarioTexto: texto("Link secundario", "Ver el catálogo", 40, { ancho: "medio" }),
       secundarioLink: link("A dónde lleva", "/categoria/remeras"),
     },

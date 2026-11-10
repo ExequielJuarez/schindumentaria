@@ -14,7 +14,7 @@
 
 <% const t = locals.tienda || {}; %>
 <footer class="footer">
-  <a href="/" class="footer__logo-gigante" aria-label="SCH Indumentaria — volver arriba"><%- include('logo', { vivo: true }) %></a>
+  <a href="/" class="footer__logo-gigante" aria-label="VELT Indumentaria — volver arriba"><%- include('logo', { vivo: true }) %></a>
   <div class="contenedor footer__grilla">
     <div class="footer__marca">
       <a href="/" class="marca-link" aria-label="Inicio"><%- include('logo', { vivo: true }) %></a>
@@ -54,7 +54,7 @@
   </div>
   <div class="contenedor footer__legal">
     <span>
-      © <%= new Date().getFullYear() %> <%= t.nombre || 'SCH Indumentaria' %>.
+      © <%= new Date().getFullYear() %> <%= t.nombre || 'VELT Indumentaria' %>.
       <% if (t.razonSocial) { %><%= t.razonSocial %><% if (t.cuit) { %> · CUIT <%= t.cuit %><% } %>.<% } %>
       Todos los derechos reservados.
     </span>

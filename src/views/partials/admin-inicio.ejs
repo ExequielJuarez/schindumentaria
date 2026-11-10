@@ -11,7 +11,7 @@
 %>
 <div class="adm">
   <aside class="adm-lateral" id="admLateral" aria-label="Menú del panel">
-    <a href="/admin" class="adm-marca" aria-label="Panel SCH"><span><%- include('logo') %></span><small>Panel</small></a>
+    <a href="/admin" class="adm-marca" aria-label="Panel VELT"><span><%- include('logo') %></span><small>Panel</small></a>
     <nav class="adm-nav">
       <% items.forEach(([k, url, nombre, icono, n]) => { %>
         <a href="<%= url %>" class="<%= sec === k ? 'activo' : '' %>" <%- sec === k ? 'aria-current="page"' : '' %>>

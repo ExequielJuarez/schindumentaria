@@ -8,7 +8,7 @@
 -- Uso: abrir en Workbench y ejecutar (⚡).
 -- ==========================================================
 
-USE tienda_sch;
+USE tienda_velt;
 
 CREATE TABLE IF NOT EXISTS arrepentimientos (
   id             INT UNSIGNED  NOT NULL AUTO_INCREMENT,
