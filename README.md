@@ -1,6 +1,6 @@
-# SCH Indumentaria — tienda online
+# VELT Indumentaria — tienda online
 
-Ecommerce de **SCH Indumentaria** ([@schindumentaria.sgo](https://www.instagram.com/schindumentaria.sgo/)), ropa de calle
+Ecommerce de **VELT Indumentaria** ([@veltindumentaria.sgo](https://www.instagram.com/veltindumentaria.sgo/)), ropa de calle
 en Santiago del Estero (La Plata 189). Express 5 + EJS + Sequelize/MySQL.
 
 La estructura de carpetas, la lógica del servidor (carrito, checkout, pagos con Mercado Pago, panel de administración,
@@ -11,7 +11,7 @@ notificaciones, botón de arrepentimiento) viene de `project1`. **Todas las vist
 ```bash
 npm install
 cp .env.example .env          # completá DB_USER / DB_PASSWORD
-npm run db:instalar           # crea la base "tienda_sch" con datos de prueba
+npm run db:instalar           # crea la base "tienda_velt" con datos de prueba
 npm run dev                   # http://localhost:3000
 ```
 
@@ -50,7 +50,7 @@ completes el `.env` (ver `ACCESO.md`, `PAGOS.md`, `DEPLOY.md`).
 
 ## Diseño
 
-Ver [`design-system/sch/MASTER.md`](design-system/sch/MASTER.md).
+Ver [`design-system/velt/MASTER.md`](design-system/velt/MASTER.md).
 
 ## Pendiente / a tener en cuenta
 

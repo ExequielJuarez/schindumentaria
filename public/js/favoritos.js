@@ -1,6 +1,6 @@
 // Favoritos: al sacar el corazón la prenda sale de la lista.
 (() => {
-  document.addEventListener("sch:favorito", (e) => {
+  document.addEventListener("velt:favorito", (e) => {
     if (e.detail.activo) return;
     const tarjeta = document.querySelector(`#favGrilla .tarjeta[data-id="${e.detail.id}"]`);
     if (!tarjeta) return;

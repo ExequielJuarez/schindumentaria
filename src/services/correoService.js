@@ -29,7 +29,7 @@ function obtenerTransporte() {
   return transporte;
 }
 
-const TIENDA = () => "SCH Indumentaria";
+const TIENDA = () => "VELT Indumentaria";
 
 const ASUNTOS = {
   login: "Tu código para entrar",

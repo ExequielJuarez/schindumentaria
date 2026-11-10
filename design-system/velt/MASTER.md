@@ -1,4 +1,4 @@
-# SCH Indumentaria — sistema de diseño
+# VELT Indumentaria — sistema de diseño
 
 Fuente de verdad visual de la tienda. Los tokens viven en `public/css/base.css` (`:root`).
 

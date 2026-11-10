@@ -1,5 +1,5 @@
 /* ==========================================================
-   SCH INDUMENTARIA — sistema de diseño
+   VELT INDUMENTARIA — sistema de diseño
    Estilo: OLED oscuro + brutalismo de calle (bordes duros,
    tipografía condensada enorme, sombras sólidas en hover).
    Un solo acento ("volt") para lo que se toca o importa.
@@ -116,15 +116,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 .contador[hidden] { display: none; }
 
 /* ── Logo animado ──────────────────────────────────────── */
-.sch-logo { width: 100%; height: auto; overflow: visible; }
-.sch-logo g { fill: none; stroke: currentColor; stroke-width: 17; stroke-linejoin: miter; stroke-linecap: butt; }
-.sch-logo--anim path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: sch-trazo 0.8s var(--ease) forwards; }
-.sch-logo--anim path:nth-of-type(1) { animation-delay: 0.1s; }
-.sch-logo--anim path:nth-of-type(2) { animation-delay: 0.45s; }
-.sch-logo--anim path:nth-of-type(3) { animation-delay: 0.8s; }
-@keyframes sch-trazo { to { stroke-dashoffset: 0; } }
-.sch-logo--vivo:hover path { animation: sch-glitch 0.45s steps(2) 1; }
-@keyframes sch-glitch {
+.velt-logo { width: 100%; height: auto; overflow: visible; }
+.velt-logo g { fill: none; stroke: currentColor; stroke-width: 17; stroke-linejoin: miter; stroke-linecap: butt; }
+.velt-logo--anim path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: velt-trazo 0.7s var(--ease) forwards; }
+.velt-logo--anim path:nth-of-type(1) { animation-delay: 0.1s; }
+.velt-logo--anim path:nth-of-type(2) { animation-delay: 0.38s; }
+.velt-logo--anim path:nth-of-type(3) { animation-delay: 0.66s; }
+.velt-logo--anim path:nth-of-type(4) { animation-delay: 0.94s; }
+@keyframes velt-trazo { to { stroke-dashoffset: 0; } }
+.velt-logo--vivo:hover path { animation: velt-glitch 0.45s steps(2) 1; }
+@keyframes velt-glitch {
   0% { transform: translate(0); stroke: var(--volt); }
   35% { transform: translate(-4px, 2px); stroke: var(--papel); }
   70% { transform: translate(4px, -2px); stroke: var(--volt); }
@@ -316,7 +317,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .beneficio h3 { font-family: var(--ff-titulo); text-transform: uppercase; font-size: 24px; line-height: 1.05; margin-bottom: 6px; }
 .beneficio p { color: var(--apagado); font-size: 13.5px; }
 .footer { margin-top: 90px; border-top: 1px solid var(--linea); overflow: hidden; }
-.footer__gigante { font-family: var(--ff-titulo); font-size: clamp(120px, 31vw, 520px); line-height: 0.78; letter-spacing: -0.01em; color: var(--tinta-3); text-align: center; user-select: none; padding-top: 0.08em; margin-bottom: -0.05em; transition: color 0.4s; }
+.footer__gigante { font-family: var(--ff-titulo); font-size: clamp(90px, 23vw, 400px); line-height: 0.78; letter-spacing: -0.01em; color: var(--tinta-3); text-align: center; user-select: none; padding-top: 0.08em; margin-bottom: -0.05em; transition: color 0.4s; }
 .footer:hover .footer__gigante { color: #1f2113; }
 .footer__grilla { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-block: 56px 36px; position: relative; background: var(--tinta); }
 .footer__grilla h4 { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--apagado); margin-bottom: 16px; }
@@ -382,6 +383,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   .rev { opacity: 1; transform: none; }
-  .sch-logo--anim path { stroke-dashoffset: 0; }
+  .velt-logo--anim path { stroke-dashoffset: 0; }
   .intro { display: none; }
 }

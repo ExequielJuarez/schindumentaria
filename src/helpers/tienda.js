@@ -8,15 +8,15 @@ function limpiarWhatsapp(numero) {
 module.exports = function datosTienda() {
   const e = process.env;
   return {
-    nombre: "SCH Indumentaria",
-    usuario: "@schindumentaria.sgo",
+    nombre: "VELT Indumentaria",
+    usuario: "@veltindumentaria.sgo",
     razonSocial: e.TIENDA_RAZON_SOCIAL || "",
     cuit: e.TIENDA_CUIT || "",
     direccion: e.TIENDA_DIRECCION || "La Plata 189, Santiago del Estero",
     telefono: e.TIENDA_TELEFONO || "",
     email: e.TIENDA_EMAIL || "",
     whatsapp: limpiarWhatsapp(e.TIENDA_WHATSAPP),
-    instagram: e.TIENDA_INSTAGRAM || "https://www.instagram.com/schindumentaria.sgo/",
+    instagram: e.TIENDA_INSTAGRAM || "https://www.instagram.com/veltindumentaria.sgo/",
     mapa: e.TIENDA_MAPA_URL || "https://maps.app.goo.gl/9vVBNpbeBPQEKGS27",
     horarios: e.TIENDA_HORARIOS || "Lun a Sáb · 9 a 13 y 18 a 22 hs",
     facebook: e.TIENDA_FACEBOOK || "",

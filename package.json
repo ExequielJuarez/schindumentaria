@@ -1,5 +1,5 @@
 {
-  "name": "sch-indumentaria",
+  "name": "velt-indumentaria",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Tienda online de SCH Indumentaria (Santiago del Estero)",
+  "description": "Tienda online de VELT Indumentaria (Santiago del Estero)",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.4.2",

@@ -31,7 +31,7 @@ TIENDA_DIRECCION=Calle 123, Ciudad, Provincia
 TIENDA_EMAIL=contacto@tudominio.com.ar
 TIENDA_TELEFONO=385 412-3456
 TIENDA_WHATSAPP=5493854123456
-TIENDA_INSTAGRAM=https://instagram.com/schindumentaria
+TIENDA_INSTAGRAM=https://instagram.com/veltindumentaria
 TIENDA_DATA_FISCAL_URL=
 ```
 

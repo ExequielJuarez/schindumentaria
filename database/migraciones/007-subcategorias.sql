@@ -9,7 +9,7 @@
 -- Uso: abrir en Workbench y ejecutar (⚡).
 -- ==========================================================
 
-USE tienda_sch;
+USE tienda_velt;
 
 ALTER TABLE categorias ADD COLUMN slug VARCHAR(60) NULL AFTER nombre;
 UPDATE categorias SET slug = LOWER(REPLACE(TRIM(nombre), ' ', '-'));
